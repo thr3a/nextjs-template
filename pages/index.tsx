@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 import { NextLink } from '@mantine/next';
 import { Button, Container } from '@mantine/core';
 
@@ -15,9 +15,9 @@ const Home: NextPage = () => {
       <h1 className={styles.title}>hello</h1>
       <Button component={NextLink} href="/page2">
       page2
-    </Button>
-  </Container>
-  )
-}
+      </Button>
+    </Container>
+  );
+};
 
-export default Home
+export default Home;

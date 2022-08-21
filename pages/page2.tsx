@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
 import { Container } from '@mantine/core';
 
 const Page2: NextPage = () => {
@@ -6,7 +6,7 @@ const Page2: NextPage = () => {
     <Container>
       <h1>page2</h1>
     </Container>
-  )
-}
+  );
+};
 
-export default Page2
+export default Page2;
