@@ -20,8 +20,3 @@ jobs:
 
       - name: Build Next.js app
         run: npm run build
-        # env:
-        #   URL_PREFIX: portfolio
-
-      - name: Export Next.js app
-        run: npm run export
