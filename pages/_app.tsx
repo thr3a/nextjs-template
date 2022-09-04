@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
 import { Header } from '../features/common/components/Header';
 import { Container } from '@mantine/core';
+import { PageProvider } from '../features/common/contexts/PageContext';
+
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
 
@@ -23,10 +25,12 @@ export default function App(props: AppProps) {
           colorScheme: 'light',
         }}
       >
-        <Container>
-          <Header></Header>
-          <Component {...pageProps} />
-        </Container>
+        <PageProvider>
+          <Container>
+            <Header></Header>
+            <Component {...pageProps} />
+          </Container>
+        </PageProvider>
       </MantineProvider>
     </>
   );
