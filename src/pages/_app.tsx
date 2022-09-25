@@ -23,23 +23,7 @@ export default function App(props: AppProps) {
         withNormalizeCSS
         theme={{
           colorScheme: 'light',
-          components: {
-            Button: {
-              defaultProps: {
-                radius: 'xs'
-              }
-            },
-            Input: {
-              defaultProps: {
-                radius: 'xs'
-              }
-            },
-            Textarea: {
-              defaultProps: {
-                radius: 'xs'
-              }
-            }
-          },
+          defaultRadius: 'xs',
         }}
       >
         <NotificationsProvider>
