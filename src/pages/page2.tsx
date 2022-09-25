@@ -4,6 +4,8 @@ import { IconDownload } from '@tabler/icons';
 import styles from '../styles/Home.module.scss';
 import { FormComponent } from '../features/form/components/FromComponents';
 import { Viewer } from '../features/form/components/Viewer';
+import { Button } from '@mantine/core';
+import { showNotification } from '@mantine/notifications';
 
 const Page2: NextPage = () => {
   return (
@@ -16,6 +18,17 @@ const Page2: NextPage = () => {
       <FormComponent></FormComponent>
       <FormComponent></FormComponent>
       <Viewer></Viewer>
+      <Button
+        variant="outline"
+        onClick={() =>
+          showNotification({
+            title: 'Default notification',
+            message: 'nyaa',
+          })
+        }
+      >
+        Show notification
+      </Button>
     </>
   );
 };

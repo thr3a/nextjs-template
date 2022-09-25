@@ -4,6 +4,7 @@ import { MantineProvider } from '@mantine/core';
 import { Header } from '../features/common/components/Header';
 import { Container } from '@mantine/core';
 import { PageProvider } from '../features/common/contexts/PageContext';
+import { NotificationsProvider } from '@mantine/notifications';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -21,16 +22,34 @@ export default function App(props: AppProps) {
         withGlobalStyles
         withNormalizeCSS
         theme={{
-          /** Put your mantine theme override here */
           colorScheme: 'light',
+          components: {
+            Button: {
+              defaultProps: {
+                radius: 'xs'
+              }
+            },
+            Input: {
+              defaultProps: {
+                radius: 'xs'
+              }
+            },
+            Textarea: {
+              defaultProps: {
+                radius: 'xs'
+              }
+            }
+          },
         }}
       >
-        <PageProvider>
-          <Container>
-            <Header></Header>
-            <Component {...pageProps} />
-          </Container>
-        </PageProvider>
+        <NotificationsProvider>
+          <PageProvider>
+            <Container>
+              <Header></Header>
+              <Component {...pageProps} />
+            </Container>
+          </PageProvider>
+        </NotificationsProvider>
       </MantineProvider>
     </>
   );
