@@ -1,11 +1,10 @@
 import type { NextPage } from 'next';
-import { NextLink } from '@mantine/next';
-import { Button } from '@mantine/core';
+import { Anchor } from '@mantine/core';
 
 const IndexPage: NextPage = () => {
   return (
     <>
-      <Button component={NextLink} href="/page2">page2</Button>
+      <Anchor href="/page2">Google</Anchor>
     </>
   );
 };
