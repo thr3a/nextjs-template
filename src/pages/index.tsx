@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { NextLink } from '@mantine/next';
 import { Button } from '@mantine/core';
 
-const Home: NextPage = () => {
+const IndexPage: NextPage = () => {
   return (
     <>
       <Button component={NextLink} href="/page2">page2</Button>
@@ -10,4 +10,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default IndexPage;
