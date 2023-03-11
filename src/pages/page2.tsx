@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { IconDownload } from '@tabler/icons';
+import { IconDownload } from '@tabler/icons-react';
 import styles from '../styles/Home.module.scss';
 import { FormComponent } from '../features/form/components/FromComponents';
 import { Viewer } from '../features/form/components/Viewer';
