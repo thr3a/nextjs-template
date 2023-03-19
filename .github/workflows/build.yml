@@ -3,6 +3,9 @@ name: Build Next.js app
 on:
   push:
 
+env:
+  IMAGE_NAME: ghcr.io/${{ github.repository }}:${{ github.run_number }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
