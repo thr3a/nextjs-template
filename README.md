@@ -16,12 +16,9 @@ npx npm-check-updates -u
 node --loader ts-node/esm src/scripts/sample.ts
 ```
 
-# GitHub Pages
+# デプロイ
 
-### https://thr3a.github.io/の場合
-
-https://thr3a.github.io/<レポジトリ名>
-
+## GitHub Pages (https://thr3a.github.io/<レポジトリ名>の場合)
 
 next.config.mjsより
 
@@ -33,9 +30,14 @@ const nextConfig = {
 };
 ```
 
-### 独自ドメインの場合
+## GitHub Pages (独自ドメインの場合)
 
 .github/workflows/build.ymlより「cname」をコメントアウト外す
+
+## Kubernetes
+
+- .github/workflows/build.ymlを修正
+- next.config.mjsのoutputを「standalone」にする
 
 # TODO
 
