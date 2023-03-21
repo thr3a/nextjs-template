@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { IconDownload } from '@tabler/icons-react';
 import styles from '../styles/Home.module.scss';
-import { FormComponent } from '../features/form/components/FromComponents';
-import { Viewer } from '../features/form/components/Viewer';
+import { FormComponent } from '@/features/form/components/FromComponents';
+import { Viewer } from '@/features/form/components/Viewer';
 import { Button } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import Link from 'next/link';
@@ -30,7 +30,7 @@ const Page2: NextPage = () => {
       >
         Show notification
       </Button>
-      <Button component={Link} href="https://www.google.com/">Page2</Button>
+      <Button component={Link} href="https://www.google.com/">Google</Button>
     </>
   );
 };
