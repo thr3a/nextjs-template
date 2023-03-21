@@ -1,7 +1,9 @@
+import { Title } from '@mantine/core';
+
 export const Header = () => {
   return (
     <>
-      <h1>Create Next App</h1>
+      <Title order={1}>Create Next App</Title>
     </>
   );
 };
