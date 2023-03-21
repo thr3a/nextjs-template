@@ -7,6 +7,7 @@ import { Viewer } from '@/features/form/components/Viewer';
 import { Button } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import Link from 'next/link';
+import { UserForm } from '@/features/form2/Form';
 
 const Page2: NextPage = () => {
   return (
@@ -31,6 +32,7 @@ const Page2: NextPage = () => {
         Show notification
       </Button>
       <Button component={Link} href="https://www.google.com/">Google</Button>
+      <UserForm></UserForm>
     </>
   );
 };
