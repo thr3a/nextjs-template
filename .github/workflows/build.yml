@@ -61,7 +61,6 @@ jobs:
       #     push: true
       #     tags: |
       #       ${{ env.IMAGE_NAME }}
-      #       ghcr.io/${{ github.repository_owner }}/auto-namer-sensei:latest
       #     file: Dockerfile
 
       # - name: Push remote
