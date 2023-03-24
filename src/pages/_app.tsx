@@ -67,7 +67,11 @@ export default function App(props: AppProps) {
       >
         <Notifications />
         <PageProvider>
-          <Container>
+          <Container
+            sx={(theme) => ({
+              paddingBottom: theme.spacing.xl,
+            })}
+          >
             <Header></Header>
             <Component {...pageProps} />
           </Container>
