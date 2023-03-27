@@ -2,14 +2,37 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
-  name: string
+  name: string;
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' });
-}
+export type SuccessResponseProps = {
+  status: 'ok';
+  result: Data;
+};
 
-// https://github.com/thr3a/gpt-article-generator/blob/b8fc71d2652a5a1f76b69e9d72416a810ac9da7e/src/pages/api/chat.ts
+export type ErrorResponseProps = {
+  status: 'ng';
+  errorMessage: string;
+};
+
+export type ResponseProps = SuccessResponseProps | ErrorResponseProps;
+
+export default function handler(req: NextApiRequest, res: NextApiResponse<ResponseProps>) {
+  // if (req.method !== 'POST') {
+  //   res.status(405).send({status: 'ng', errorMessage: 'Method Not Allowed'});
+  //   res.end();
+  //   return;
+  // }
+
+  if (req.query.error === '1') {
+    res.status(500).json({
+      status: 'ng',
+      errorMessage: 'Internal Server Error'
+    });
+    res.end();
+    return;
+  }
+
+  res.status(200).json({status: 'ok', result: {name: 'John Smith'}});
+  res.end();
+}
