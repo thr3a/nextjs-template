@@ -11,3 +11,5 @@ export default function handler(
 ) {
   res.status(200).json({ name: 'John Doe' });
 }
+
+// https://github.com/thr3a/gpt-article-generator/blob/b8fc71d2652a5a1f76b69e9d72416a810ac9da7e/src/pages/api/chat.ts
