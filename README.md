@@ -42,4 +42,3 @@ const nextConfig = {
 # TODO
 
 - データベース
-- debug出来るように
