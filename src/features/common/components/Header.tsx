@@ -1,9 +1,13 @@
 import { Title } from '@mantine/core';
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
   return (
     <>
-      <Title order={1}>Create Next App</Title>
+      <Title order={1}
+        sx={(theme) => ({
+          marginTop: theme.spacing.md
+        })}
+      >Create Next App</Title>
     </>
   );
 };

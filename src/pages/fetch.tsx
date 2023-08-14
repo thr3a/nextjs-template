@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
-import useSWR from 'swr';
+import { useQuery } from '@tanstack/react-query';
+import { Text } from '@mantine/core';
 
 type RepositoryProps = {
   id: number
@@ -9,29 +10,41 @@ type RepositoryProps = {
   stargazers_count: number
 } & Record<string, unknown>;
 
-const Posts = () => {
-  const fetcher = async (url: string): Promise<any> => await fetch(url).then(async res => await res.json());
-  const { data, error } = useSWR('https://api.github.com/orgs/rails/repos', fetcher);
+const fetchRepositories = async (): Promise<RepositoryProps[]> => {
+  const response = await fetch('https://api.github.com/orgs/rails/repos');
+  return await response.json();
+};
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+const Posts = (): JSX.Element => {
+  const { data, isLoading, isError } = useQuery(['qiita'], async () => {
+    const data = await fetchRepositories();
+    return data;
+  });
+
+  if (isLoading) {
+    return <Text>読み込み中</Text>;
+  }
+
+  if (data === undefined || isError) {
+    return <Text>エラーが発生しました</Text>;
+  }
 
   return (
     <>
-      { data.map((repo: RepositoryProps) => {
-        return (
-          <p key={repo.id}>{repo.name} / {repo.description}</p>
-        );
-      })}
+      {
+        data.map((repo) => {
+          return (
+            <p key={repo.id}>{repo.name} / {repo.description}</p>
+          );
+        })
+      }
     </>
   );
 };
 
 const FetchPage: NextPage = () => {
   return (
-    <>
-      <Posts></Posts>
-    </>
+    <Posts></Posts>
   );
 };
 

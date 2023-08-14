@@ -1,9 +1,9 @@
 import { NumberInput, Group, Button, Box } from '@mantine/core';
 import { UserFormProvider, useUserForm } from '@/features/form2/UserContext';
 import { NameInput } from '@/features/form2/NameInput';
-import { isNotEmpty, isEmail, isInRange, hasLength, matches } from '@mantine/form';
+import { isNotEmpty, isInRange } from '@mantine/form'; // https://mantine.dev/form/validators/
 
-export const UserForm = () => {
+export const UserForm = (): JSX.Element => {
   const form = useUserForm({
     initialValues: {
       age: 0,
@@ -16,7 +16,7 @@ export const UserForm = () => {
     }
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     console.log(form.values);
   };
 

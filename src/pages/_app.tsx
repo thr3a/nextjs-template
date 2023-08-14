@@ -2,9 +2,20 @@ import { type AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider, Container } from '@mantine/core';
 import { Header } from '../features/common/components/Header';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-export default function App (props: AppProps) {
+export default function App (props: AppProps): JSX.Element {
   const { Component, pageProps } = props;
+
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false,
+        staleTime: 300000
+      }
+    }
+  });
 
   return (
     <>
@@ -62,14 +73,16 @@ export default function App (props: AppProps) {
           }
         }}
       >
-        <Container
-          sx={(theme) => ({
-            paddingBottom: theme.spacing.xl
-          })}
-        >
-          <Header></Header>
-          <Component {...pageProps} />
-        </Container>
+        <QueryClientProvider client={queryClient}>
+          <Container
+            sx={(theme) => ({
+              paddingBottom: theme.spacing.xl
+            })}
+          >
+            <Header></Header>
+            <Component {...pageProps} />
+          </Container>
+        </QueryClientProvider>
       </MantineProvider>
     </>
   );
