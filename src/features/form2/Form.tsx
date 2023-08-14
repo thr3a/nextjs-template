@@ -7,13 +7,13 @@ export const UserForm = () => {
   const form = useUserForm({
     initialValues: {
       age: 0,
-      name: '',
+      name: ''
     },
 
     validate: {
       name: isNotEmpty('名前は必須項目です'),
-      age: isInRange({ min: 18, max: 99 }, 'You must be 18-99 years old to register'),
-    },
+      age: isInRange({ min: 18, max: 99 }, 'You must be 18-99 years old to register')
+    }
   });
 
   const handleSubmit = () => {
@@ -22,7 +22,7 @@ export const UserForm = () => {
 
   return (
     <UserFormProvider form={form}>
-      <Box component="form" maw={400} mx="auto" onSubmit={form.onSubmit(() => handleSubmit())}>
+      <Box component="form" maw={400} mx="auto" onSubmit={form.onSubmit(() => { handleSubmit(); })}>
         <NumberInput label="Age" withAsterisk {...form.getInputProps('age')} />
         <NameInput />
         <Group position="center" mt="md">

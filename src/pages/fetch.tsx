@@ -4,18 +4,18 @@ import useSWR from 'swr';
 type RepositoryProps = {
   id: number
   name: string
-  full_name: string,
+  full_name: string
   description: string
   stargazers_count: number
-} & Record<string, unknown>
+} & Record<string, unknown>;
 
 const Posts = () => {
-  const fetcher = (url: string): Promise<any> => fetch(url).then(res => res.json());
+  const fetcher = async (url: string): Promise<any> => await fetch(url).then(async res => await res.json());
   const { data, error } = useSWR('https://api.github.com/orgs/rails/repos', fetcher);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
-  
+
   return (
     <>
       { data.map((repo: RepositoryProps) => {

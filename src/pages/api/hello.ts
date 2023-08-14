@@ -4,31 +4,31 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
 
 type Data = {
-  name: string;
-}
+  name: string
+};
 
 export type SuccessResponseProps = {
-  status: 'ok';
-  result: Data;
+  status: 'ok'
+  result: Data
 };
 
 export type ErrorResponseProps = {
-  status: 'ng';
-  errorMessage: string;
+  status: 'ng'
+  errorMessage: string
 };
 
 export type ResponseProps = SuccessResponseProps | ErrorResponseProps;
 
 const requestSchema = z.object({
   name: z.string(),
-  error: z.boolean().optional(),
+  error: z.boolean().optional()
 });
 
 type RequestProps = NextApiRequest & {
-  query: z.infer<typeof requestSchema>;
-}
+  query: z.infer<typeof requestSchema>
+};
 
-export default function handler(req: RequestProps, res: NextApiResponse<ResponseProps>) {
+export default function handler (req: RequestProps, res: NextApiResponse<ResponseProps>) {
   // if (req.method !== 'POST') {
   //   res.status(405).send({status: 'ng', errorMessage: 'Method Not Allowed'});
   //   res.end();
@@ -45,11 +45,11 @@ export default function handler(req: RequestProps, res: NextApiResponse<Response
   const reqData = requestSchema.safeParse(req.query);
   if (!reqData.success) {
     console.log(reqData.error);
-    res.status(400).send({status: 'ng', errorMessage: 'Invalid request'});
+    res.status(400).send({ status: 'ng', errorMessage: 'Invalid request' });
     res.end();
     return;
   }
 
-  res.status(200).json({status: 'ok', result: {name: reqData.data.name}});
+  res.status(200).json({ status: 'ok', result: { name: reqData.data.name } });
   res.end();
 }
