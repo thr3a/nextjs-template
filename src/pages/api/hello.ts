@@ -28,28 +28,26 @@ type RequestProps = NextApiRequest & {
   query: z.infer<typeof requestSchema>
 };
 
-export default function handler (req: RequestProps, res: NextApiResponse<ResponseProps>) {
+export default function handler (req: RequestProps, res: NextApiResponse<ResponseProps>): NextApiResponse<ResponseProps> {
   // if (req.method !== 'POST') {
-  //   res.status(405).send({status: 'ng', errorMessage: 'Method Not Allowed'});
+  //   res.status(405).send({ status: 'ng', errorMessage: 'Method Not Allowed' });
   //   res.end();
   //   return;
   // }
-  if (req.query.error) {
+  if (req.query.error !== undefined && req.query.error) {
     res.status(500).json({
       status: 'ng',
       errorMessage: 'Internal Server Error'
     });
-    res.end();
-    return;
+    return res.end();
   }
   const reqData = requestSchema.safeParse(req.query);
   if (!reqData.success) {
     console.log(reqData.error);
     res.status(400).send({ status: 'ng', errorMessage: 'Invalid request' });
-    res.end();
-    return;
+    return res.end();
   }
 
   res.status(200).json({ status: 'ok', result: { name: reqData.data.name } });
-  res.end();
+  return res.end();
 }

@@ -11,7 +11,7 @@ type RepositoryProps = {
 } & Record<string, unknown>;
 
 const fetchRepositories = async (): Promise<RepositoryProps[]> => {
-  const response = await fetch('https://api.github.com/orgs/rails/repos');
+  const response = await fetch('https://api.github.com/orgs/facebook/repos');
   return await response.json();
 };
 
