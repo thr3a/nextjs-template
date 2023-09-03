@@ -4,6 +4,12 @@
 npx create-next-app hogehoge --use-npm --example https://github.com/thr3a/nextjs-template
 ```
 
+# ひな壇生成
+
+```
+npm run plop form my-xxx
+```
+
 # アップデート
 
 ```
