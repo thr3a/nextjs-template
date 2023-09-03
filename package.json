@@ -10,7 +10,8 @@
     "lint": "next lint --fix",
     "export": "next export",
     "serve": "python -m http.server -d out",
-    "node-server": "node server.js"
+    "node-server": "node server.js",
+    "plop": "plop"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -35,6 +36,7 @@
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.13",
     "eslint-config-standard-with-typescript": "^37.0.0",
+    "plop": "^3.1.2",
     "typescript": "5.0.4"
   }
 }

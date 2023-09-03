@@ -1,0 +1,7 @@
+import { createFormContext } from '@mantine/form';
+
+type {{ pascalCase name }}FormProps = {
+  name: string
+};
+
+export const [{{> formProvider }}, {{> formContext }}, {{> formUse }}] = createFormContext<{{ pascalCase name }}FormProps>();

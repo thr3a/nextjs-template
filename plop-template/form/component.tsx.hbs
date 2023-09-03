@@ -1,0 +1,35 @@
+import { Group, Button, Box, TextInput } from '@mantine/core';
+import { {{> formProvider }}, {{> formUse }}, {{> formContext }} } from '@/features/{{snakeCase name}}/{{ pascalCase name }}Context';
+import { isNotEmpty } from '@mantine/form'; // https://mantine.dev/form/validators/
+
+export const NameInput = (): JSX.Element => {
+  const form = {{> formContext }}();
+  return <TextInput label="Name" withAsterisk {...form.getInputProps('name')} />;
+};
+
+export const {{ pascalCase name }}Form = (): JSX.Element => {
+  const form = {{> formUse }}({
+    initialValues: {
+      name: ''
+    },
+
+    validate: {
+      name: isNotEmpty('名前は必須項目です')
+    }
+  });
+
+  const handleSubmit = (): void => {
+    console.log(form.values);
+  };
+
+  return (
+    <{{> formProvider }} form={form}>
+      <Box component="form" maw={400} mx="auto" onSubmit={form.onSubmit(() => { handleSubmit(); })}>
+        <NameInput />
+        <Group position="center" mt="md">
+          <Button type="submit">送信</Button>
+        </Group>
+      </Box>
+    </{{> formProvider }}>
+  );
+};
