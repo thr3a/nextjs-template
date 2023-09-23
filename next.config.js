@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  // basePath: process.env.GITHUB_ACTIONS && 'nextjs-template',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  poweredByHeader: false,
+  // output: 'standalone'
+};
 
 module.exports = nextConfig

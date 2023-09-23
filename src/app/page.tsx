@@ -1,7 +1,12 @@
-export default function Page() {
+import Link from 'next/link';
+import { Button } from '@mantine/core';
+
+export default function Page () {
   return (
     <main>
-      1
+      <Button component={Link} href="/sample/fetch">
+        fetch
+      </Button>
     </main>
-  )
+  );
 }
