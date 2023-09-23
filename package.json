@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "export": "next export",
     "serve": "python -m http.server -d out",
     "node-server": "node server.js",
     "plop": "plop"
