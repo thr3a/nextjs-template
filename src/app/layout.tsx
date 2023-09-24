@@ -2,7 +2,8 @@ import '@mantine/core/styles.css';
 import { MantineProvider, ColorSchemeScript, Container, Title, Text } from '@mantine/core';
 import type { Metadata } from 'next';
 import { theme } from '@/theme';
-import React from 'react';
+// import React from 'react';
+import { Providers } from '@/providers';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,11 +19,13 @@ export default function RootLayout ({ children }: { children: React.ReactNode })
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <Container>
-            <Title mt={'md'}>Create Next App</Title>
-            <Title order={5} mb={'md'} c={'dimmed'}>物価上昇を耐え抜け</Title>
-            {children}
-          </Container>
+          <Providers>
+            <Container>
+              <Title mt={'md'}>Create Next App</Title>
+              <Title order={5} mb={'md'} c={'dimmed'}>nyaa</Title>
+              {children}
+            </Container>
+          </Providers>
         </MantineProvider>
       </body>
     </html>
