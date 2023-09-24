@@ -1,5 +1,5 @@
 1:HL["/_next/static/css/e0e5e32d4f5c825f.css","style"]
-0:["O1xof4AiTQkN5ALRUxDjO",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e0e5e32d4f5c825f.css","precedence":"next"}]],"$L3"]]]]
+0:["dQVHcEK-Ku6ReyjVA84xc",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e0e5e32d4f5c825f.css","precedence":"next"}]],"$L3"]]]]
 4:I{"id":2168,"chunks":["603:static/chunks/603-820288f393710bc3.js","168:static/chunks/168-76046bf45a0263bd.js","724:static/chunks/724-c7ca0ea1f14e2864.js","931:static/chunks/app/page-9e5243bb3acfa72b.js"],"name":"ColorSchemeScript","async":false}
 5:I{"id":2168,"chunks":["603:static/chunks/603-820288f393710bc3.js","168:static/chunks/168-76046bf45a0263bd.js","724:static/chunks/724-c7ca0ea1f14e2864.js","931:static/chunks/app/page-9e5243bb3acfa72b.js"],"name":"MantineProvider","async":false}
 6:I{"id":602,"chunks":["603:static/chunks/603-820288f393710bc3.js","168:static/chunks/168-76046bf45a0263bd.js","331:static/chunks/331-d35d0b957618382b.js","185:static/chunks/app/layout-4817ba81ed1fa721.js"],"name":"theme","async":false}
