@@ -4,7 +4,7 @@ import { type NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
 const requestSchema = z.object({
-  name: z.string(),
+  name: z.string()
 });
 
 export function GET(req: NextRequest): NextResponse {
@@ -17,15 +17,15 @@ export function GET(req: NextRequest): NextResponse {
     return NextResponse.json(
       {
         status: 'ng',
-        errors,
+        errors
       },
-      { status: 400 },
+      { status: 400 }
     );
   }
 
   return NextResponse.json({
     status: 'ok',
-    result: params,
+    result: params
   });
 }
 
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   } catch (e) {
     return NextResponse.json({
       status: 'ng',
-      errorMessage: 'Parse error',
+      errorMessage: 'Parse error'
     });
   }
   const result = requestSchema.safeParse(body);
@@ -46,13 +46,13 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       {
         status: 'ng',
         errorMessage: 'Validation error',
-        errors,
+        errors
       },
-      { status: 400 },
+      { status: 400 }
     );
   }
   return NextResponse.json({
     status: 'ok',
-    result: body,
+    result: body
   });
 }

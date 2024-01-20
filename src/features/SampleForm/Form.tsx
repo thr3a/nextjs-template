@@ -18,8 +18,8 @@ export function SampleForm(): JSX.Element {
   const form = useForm({
     initialValues: {
       age: 20,
-      name: '',
-    },
+      name: ''
+    }
   });
 
   const handleSubmit = (): void => {

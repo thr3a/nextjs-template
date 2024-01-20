@@ -9,49 +9,49 @@ export const theme = createTheme({
     TextInput: {
       styles: (theme: MantineTheme) => ({
         label: {
-          fontWeight: 'bold',
+          fontWeight: 'bold'
         },
         root: {
-          marginBottom: theme.spacing.xs,
-        },
-      }),
+          marginBottom: theme.spacing.xs
+        }
+      })
     },
     NumberInput: {
       styles: (theme: MantineTheme) => ({
         label: {
-          fontWeight: 'bold',
+          fontWeight: 'bold'
         },
         root: {
-          marginBottom: theme.spacing.xs,
-        },
-      }),
+          marginBottom: theme.spacing.xs
+        }
+      })
     },
     RadioGroup: {
       styles: (theme: MantineTheme) => ({
         label: {
-          fontWeight: 'bold',
+          fontWeight: 'bold'
         },
         root: {
-          marginBottom: theme.spacing.xs,
-        },
-      }),
+          marginBottom: theme.spacing.xs
+        }
+      })
     },
     Checkbox: {
       styles: (theme: MantineTheme) => ({
         root: {
-          marginBottom: theme.spacing.sm,
-        },
-      }),
+          marginBottom: theme.spacing.sm
+        }
+      })
     },
     DatePicker: {
       styles: (theme: MantineTheme) => ({
         label: {
-          fontWeight: 'bold',
+          fontWeight: 'bold'
         },
         day: {
-          height: 30,
-        },
-      }),
-    },
-  },
+          height: 30
+        }
+      })
+    }
+  }
 });

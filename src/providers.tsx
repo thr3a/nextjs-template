@@ -10,10 +10,10 @@ export function Providers({ children }: { children: ReactNode }): JSX.Element {
           queries: {
             retry: false,
             refetchOnWindowFocus: false,
-            staleTime: 300000,
-          },
-        },
-      }),
+            staleTime: 300000
+          }
+        }
+      })
   );
   return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 }

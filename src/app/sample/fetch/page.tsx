@@ -20,7 +20,7 @@ const fetchRepositories = async (): Promise<RepositoryProps[]> => {
 const myQuery = (): RepositoryProps[] => {
   const { data } = useSuspenseQuery({
     queryKey: ['repo', 'facebook'],
-    queryFn: async () => await fetchRepositories(),
+    queryFn: async () => await fetchRepositories()
   });
   return data;
   // return [query.data, query] as const;

@@ -18,6 +18,7 @@
       "quoteStyle": "single",
       "jsxQuoteStyle": "single",
       "semicolons": "always",
+      "trailingComma": "none",
       "indentStyle": "space",
       "indentWidth": 2,
       "lineWidth": 320
