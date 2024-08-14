@@ -11,7 +11,7 @@ type RepositoryProps = {
 } & Record<string, unknown>;
 
 const fetchRepositories = async (): Promise<RepositoryProps[]> => {
-  const url = 'https://mocki.io/v1/178a3315-be2e-416b-ad47-ee28b99cdd7d';
+  const url = 'https://mocki.io/v1/ad841940-cc6f-4ed2-83ff-cab434183a58';
   // const url = 'https://api.github.com/orgs/facebook/repos';
   const response = await fetch(url);
   return await response.json();
@@ -32,7 +32,7 @@ const Repos = (): JSX.Element => {
     <>
       {data.map((repo, index) => {
         return (
-          <p>
+          <p key={index}>
             {repo.name} / {repo.description}
           </p>
         );

@@ -30,7 +30,7 @@ export function GET(req: NextRequest): NextResponse {
 }
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
-  let body: any;
+  let body: unknown;
   try {
     body = await req.json();
   } catch (e) {
