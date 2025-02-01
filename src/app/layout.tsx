@@ -21,8 +21,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <MantineProvider theme={theme}>
           <Providers>
             <Container>
-              <Title mt={'md'}>Create Next App</Title>
-              <Title order={5} mb={'md'} c={'dimmed'}>
+              <Title mt={'md'} order={2}>Create Next App</Title>
+              <Title order={6} mb={'md'} c={'dimmed'}>
                 nyaa
               </Title>
               {children}
