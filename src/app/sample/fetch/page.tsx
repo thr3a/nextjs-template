@@ -11,8 +11,8 @@ type RepositoryProps = {
 } & Record<string, unknown>;
 
 const fetchRepositories = async (): Promise<RepositoryProps[]> => {
-  const url = 'https://mocki.io/v1/ad841940-cc6f-4ed2-83ff-cab434183a58';
-  // const url = 'https://api.github.com/orgs/facebook/repos';
+  // const url = 'https://mocki.io/v1/ad841940-cc6f-4ed2-83ff-cab434183a58';
+  const url = 'https://api.github.com/orgs/facebook/repos';
   const response = await fetch(url);
   return await response.json();
 };
