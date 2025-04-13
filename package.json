@@ -6,7 +6,7 @@
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check --apply ./src",
+    "lint": "biome check --write ./src",
     "serve": "python -m http.server -d out",
     "node-server": "node server.js",
     "plop": "plop"

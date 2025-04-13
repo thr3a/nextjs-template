@@ -9,12 +9,12 @@ type FormValues = {
 
 const [FormProvider, useFormContext, useForm] = createFormContext<FormValues>();
 
-function NameInput(): JSX.Element {
+function NameInput() {
   const form = useFormContext();
   return <TextInput label='氏名' {...form.getInputProps('name')} />;
 }
 
-export function SampleForm(): JSX.Element {
+export function SampleForm() {
   const form = useForm({
     initialValues: {
       age: 20,

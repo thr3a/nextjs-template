@@ -26,7 +26,7 @@ const myQuery = (): RepositoryProps[] => {
   // return [query.data, query] as const;
 };
 
-const Repos = (): JSX.Element => {
+const Repos = () => {
   const data = myQuery();
   return (
     <>
@@ -41,7 +41,7 @@ const Repos = (): JSX.Element => {
   );
 };
 
-export default function Page(): JSX.Element {
+export default function Page() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Repos />
