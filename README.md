@@ -1,15 +1,3 @@
-# 利用方法
-
-```
-npx create-next-app hogehoge --use-npm --example https://github.com/thr3a/nextjs-template
-```
-
-# ひな壇生成
-
-```
-npm run plop form my-xxx
-```
-
 # アップデート
 
 ```
@@ -40,10 +28,11 @@ const nextConfig = {
 
 .github/workflows/build.ymlより「cname」をコメントアウト外す
 
-## Kubernetes
+## Kamal
 
-- .github/workflows/build.ymlを修正
-- next.config.mjsのoutputを「standalone」にする
+```
+dotenv kamal deploy
+```
 
 # TODO
 
