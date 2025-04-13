@@ -1,13 +1,13 @@
 # アップデート
 
 ```
-npx npm-check-updates -u
+npx -y npm-check-updates -ui
 ```
 
 # ts直接実行する
 
 ```
-node --loader ts-node/esm src/scripts/sample.ts
+node --import tsx --env-file .env --watch ./src/scripts/discord.ts
 ```
 
 # デプロイ
