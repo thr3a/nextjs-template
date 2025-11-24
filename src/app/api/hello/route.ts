@@ -13,11 +13,11 @@ export function GET(req: NextRequest): NextResponse {
   console.log(params, result);
 
   if (!result.success) {
-    const { errors } = result.error;
+    const { issues } = result.error;
     return NextResponse.json(
       {
         status: 'ng',
-        errors
+        errors: issues
       },
       { status: 400 }
     );
@@ -41,12 +41,12 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
   const result = requestSchema.safeParse(body);
   if (!result.success) {
-    const { errors } = result.error;
+    const { issues } = result.error;
     return NextResponse.json(
       {
         status: 'ng',
         errorMessage: 'Validation error',
-        errors
+        errors: issues
       },
       { status: 400 }
     );
