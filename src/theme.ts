@@ -1,6 +1,6 @@
 'use client';
 
-import { type MantineTheme, createTheme } from '@mantine/core';
+import { createTheme, type MantineTheme } from '@mantine/core';
 
 export const theme = createTheme({
   defaultRadius: 'xs',
@@ -44,7 +44,7 @@ export const theme = createTheme({
       })
     },
     DatePicker: {
-      styles: (theme: MantineTheme) => ({
+      styles: () => ({
         label: {
           fontWeight: 'bold'
         },
