@@ -2,7 +2,6 @@
 
 import { Box, Button, Group, NumberInput, TextInput } from '@mantine/core';
 import { createFormContext } from '@mantine/form';
-
 type FormValues = {
   name: string;
   age: number;
