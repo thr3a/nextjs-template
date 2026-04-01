@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check --write ./src",
-    "serve": "python -m http.server -d out",
-    "node-server": "node server.js",
-    "plop": "plop"
+    "node-server": "node server.js"
   },
   "dependencies": {
     "@biomejs/biome": "^2.4.8",
